@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tgb.trafficHandActivemq.bus.dao.v1.BusCityDao">
+	<resultMap id="BusCityBaseResultMap" type="com.tgb.trafficHandActivemq.bus.entity.BusCity">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="city_code" property="cityCode" jdbcType="VARCHAR" />
+		<result column="city_name" property="cityName" jdbcType="VARCHAR" />
+		<result column="bus_src" property="busSrc" jdbcType="VARCHAR" />
+		<result column="bus_co" property="busCo" jdbcType="VARCHAR" />
+		<result column="bus_lon" property="busLon" jdbcType="DOUBLE" />
+		<result column="bus_lat" property="busLat" jdbcType="DOUBLE" />
+		<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+		<result column="is_hot" property="isHot" jdbcType="CHAR" />
+		<result column="is_available" property="isAvailable" jdbcType="CHAR" />
+	</resultMap>
+
+	<select id="getBusCity" resultMap="BusCityBaseResultMap">
+		select city_code,city_name,bus_src,bus_co,bus_lon,bus_lat,update_time,is_hot,is_available 
+		from bus_city
+	</select>
+</mapper>
